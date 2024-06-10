@@ -1,5 +1,6 @@
 #include<SFML/Graphics.hpp>
 #include<SFML/System/Clock.hpp>
+#include <SFML/System/Time.hpp>
 #include<glm/glm.hpp>
 #include"../includes/window.hpp"
 #include"../includes/scene.hpp"
@@ -11,8 +12,9 @@ void loop(float dt){
 
 int main(){
 	Window::open();
-
     Scene::load("./scene.json");
+
+    sf::sleep(sf::seconds(0.1f));
 
     sf::Clock clock;
 	while(Window::window.isOpen()){
