@@ -3,6 +3,8 @@
 #include"../includes/json.hpp"
 #include"../includes/scene.hpp"
 
+float Scene::gravity = -9.8066f;
+float Scene::friction = 1.f;
 std::vector<Object> Scene::object;
 std::vector<Wall> Scene::wall;
 
@@ -36,5 +38,15 @@ void Scene::load(const std::string& file_path) {
             float radius = wll["radius"];
             wall.emplace_back(center, radius);
         }
+    }
+}
+
+void Scene::update(float dt){
+    for(unsigned int i = 0; i < Scene::object.size(); i++){
+        Scene::object[i].velocity += glm::vec2(0,-Scene::gravity);
+        Scene::object[i].move(dt);
+    }
+   
+    for(unsigned int i = 0; i < Scene::wall.size(); i++){
     }
 }

@@ -1,5 +1,5 @@
-#include <SFML/Graphics/CircleShape.hpp>
-#include <SFML/Graphics/Color.hpp>
+#include<SFML/Graphics/CircleShape.hpp>
+#include<SFML/Graphics/Color.hpp>
 #include<iostream>
 #include<SFML/Graphics.hpp>
 #include<cmath>
@@ -33,9 +33,9 @@ void Window::repaint(float dt){
     for(unsigned int i = 0; i < Scene::object.size(); i++){
         sf::CircleShape shape(Scene::object[i].radius);
         shape.setPosition(
-			Scene::object[i].center.x - Scene::object[i].radius, 
-			Scene::object[i].center.y - Scene::object[i].radius
-		);
+            Scene::object[i].center.x - Scene::object[i].radius, 
+            Scene::object[i].center.y - Scene::object[i].radius
+        );
         shape.setFillColor(sf::Color::White); 
         Window::window.draw(shape);    
     }

@@ -10,10 +10,13 @@ class Scene {
 private:
     static nl::json read_json(const std::string& file_path);
 public:
+    static float gravity;
+    static float friction;
     static std::vector<Object> object;
     static std::vector<Wall> wall;
 public:
     static void load(const std::string& file_path);
+    static void update(float dt);
 };
 
 #endif

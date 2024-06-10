@@ -6,6 +6,7 @@
 
 void loop(float dt){
     Window::repaint(dt);
+    Scene::update(dt);
 }
 
 int main(){
