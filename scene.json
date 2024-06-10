@@ -1,0 +1,10 @@
+{
+	"object":[
+		{"center":[500,0,0],"radius":100},
+		{"center":[700,0,0],"radius":100}
+	],
+	"wall":[
+		{"center":[500,200,0],"radius":100},
+		{"center":[700,200,0],"radius":100}
+	]
+}
