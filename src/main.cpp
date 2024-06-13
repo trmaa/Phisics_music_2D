@@ -14,14 +14,18 @@ int main(){
 	Window::open();
     Scene::load("./scene.json");
 
-    sf::sleep(sf::seconds(0.1f));
+    sf::sleep(sf::seconds(1.f));
 
     sf::Clock clock;
 	while(Window::window.isOpen()){
         sf::Event event;
         while(Window::window.pollEvent(event)){
-            if(event.type == sf::Event::Closed)
+            if(event.type == sf::Event::Closed){
                 Window::window.close();
+            } else if (event.type == sf::Event::Resized) {
+                sf::FloatRect visibleArea(0, 0, event.size.width, event.size.height);
+                Window::window.setView(sf::View(visibleArea));
+            }
         }
         sf::Time elapsed = clock.restart();
         float dt = elapsed.asSeconds();

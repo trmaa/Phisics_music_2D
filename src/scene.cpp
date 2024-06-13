@@ -3,7 +3,7 @@
 #include"../includes/json.hpp"
 #include"../includes/scene.hpp"
 
-float Scene::gravity = -9.8066f;
+float Scene::gravity = -98.066f;
 float Scene::friction = 1.f;
 std::vector<Object> Scene::object;
 std::vector<Wall> Scene::wall;
@@ -43,8 +43,23 @@ void Scene::load(const std::string& file_path) {
 
 void Scene::update(float dt){
     for(unsigned int i = 0; i < Scene::object.size(); i++){
-        Scene::object[i].velocity += glm::vec2(0,-Scene::gravity);
-        Scene::object[i].move(dt);
+        Object *obj = &Scene::object[i];
+        obj->velocity += glm::vec2(0,-Scene::gravity);
+        //bucle de esferas que chequea colision y multiplica suma las velocidades
+        for(unsigned int j = 0; j < Scene::object.size(); j++){
+            if(i==j){
+                continue;
+            }
+            Object *obj2 = &Scene::object[j];
+            glm::vec2 dir = obj->center-obj2->center;
+            float dis = std::sqrt(glm::dot(dir,dir));
+
+            if(dis<obj->radius+obj2->radius){
+                obj->velocity += dir;
+                obj2->velocity -= dir;
+            }
+        }
+        obj->move(dt);
     }
    
     for(unsigned int i = 0; i < Scene::wall.size(); i++){

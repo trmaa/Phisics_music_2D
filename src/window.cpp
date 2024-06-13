@@ -22,6 +22,8 @@ void Window::open(){
 	Window::m_fpsText.setCharacterSize(24);
 	Window::m_fpsText.setFillColor(sf::Color::White);
 	Window::m_fpsText.setPosition(10.f, 10.f);
+
+    Window::window.setFramerateLimit(60);
 }
 
 void Window::repaint(float dt){
