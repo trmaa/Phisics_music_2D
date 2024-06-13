@@ -16,13 +16,12 @@ public:
     void move(float dt){
         this->center += this->velocity*dt;
         if(
-            this->equation(glm::vec2(this->center.x,Window::window.getSize().y))//need a fix 
-            || this->center.y>Window::window.getSize().y-this->radius
+            //this->equation(glm::vec2(this->center.x,Window::window.getSize().y)) || 
+            this->center.y>Window::window.getSize().y-this->radius
         ){
-            this->velocity *= glm::vec2(0,-0.6f);
+            this->velocity *= glm::vec2(0,-1);
             this->center.y = Window::window.getSize().y-this->radius;
         }
-        //std::cout<<this->equation(glm::vec2(this->center.x,Window::window.getSize().y));
     }
 };
 

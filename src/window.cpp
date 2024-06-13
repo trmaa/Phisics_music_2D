@@ -49,7 +49,7 @@ void Window::repaint(float dt){
             Scene::wall[i].center.y - Scene::wall[i].radius
         );
         shape.setFillColor(sf::Color::Transparent);
-        shape.setOutlineThickness(2);
+        shape.setOutlineThickness(4);
         shape.setOutlineColor(sf::Color::White);
         Window::window.draw(shape);    
     }
