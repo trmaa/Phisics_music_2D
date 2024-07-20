@@ -1,0 +1,15 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-I./include/",
+      "-o",
+      "./bin/app",
+      "./src/main.cpp"
+    ],
+    "directory": "/home/pablo/pelotas",
+    "file": "/home/pablo/pelotas/src/main.cpp",
+    "output": "/home/pablo/pelotas/bin/app"
+  }
+]

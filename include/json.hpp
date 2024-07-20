@@ -15,8 +15,8 @@
  * file docs/README.md.                                                     *
 \****************************************************************************/
 
-#ifndef INCLUDE_NLOHMANN_JSON_HPP_
-#define INCLUDE_NLOHMANN_JSON_HPP_
+#ifndef JSON_HPP
+#define JSON_HPP
 
 #include <algorithm> // all_of, find, for_each
 #include <cstddef> // nullptr_t, ptrdiff_t, size_t

@@ -1,9 +1,0 @@
-{
-	"object":[
-		{"center":[600,360,0],"radius":100},
-		{"center":[640,160,0],"radius":100}
-	],
-	"wall":[
-		{"center":[640,600,0],"radius":500}
-	]
-}
